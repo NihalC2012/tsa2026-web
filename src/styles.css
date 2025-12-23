@@ -1,0 +1,29 @@
+.home-page {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.home-page h1 {
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Ensure timeline container has enough space */
+.home-page > div {
+  overflow: visible !important;
+}
+
+/* Style images in detailed text */
+.react-chrono-timeline .react-chrono-card-details img {
+  width: 100% !important;
+  max-width: 500px !important;
+  margin: 15px 0 !important;
+  border-radius: 8px !important;
+}
+
+/* Paragraphs in detailed text */
+.react-chrono-timeline .react-chrono-card-details p {
+  margin-bottom: 15px !important;
+  line-height: 1.8 !important;
+}
+
