@@ -4,38 +4,28 @@ export default function People() {
   const [people] = useState([
     {
       id: 1,
-      name: "John Doe",
-      role: "Software Engineer",
-      email: "john.doe@example.com",
-      department: "Engineering"
+      name: "General Anthony Wayne",
+      history: "General Anthony Wayne was born near Exton and was a hero in the American Revolutionary War. Known for his bold and daring tactics, he earned the nickname 'Mad Anthony.' Wayne played a crucial role in several key battles, including the Battle of Stony Point and the Battle of Yorktown. After the war, he continued to serve his country as a statesman and military leader, contributing to the early development of the United States. He is rumoored to still haunt the residents of Exton and nearby areas",
     },
     {
       id: 2,
-      name: "Jane Smith",
-      role: "Product Manager",
-      email: "jane.smith@example.com",
-      department: "Product"
+      name: "Dr. William Darlington",
+      history: " Dr. William Darlington was a renowned botanist, physician, and banker, born in nearby Birmingham Township (1782-1863)."
     },
     {
       id: 3,
-      name: "Bob Johnson",
-      role: "Designer",
-      email: "bob.johnson@example.com",
-      department: "Design"
+      name: "Matt Ryan",
+      history: "Matt Ryan, the former nfl quarterback for the Atlanta Falcons and Indianapolis Colts, was born in Exton, Pennsylvania. His leadership and skills on the field have made him one of the most decorated players in the league."
     },
     {
       id: 4,
-      name: "Alice Williams",
-      role: "Marketing Specialist",
-      email: "alice.williams@example.com",
-      department: "Marketing"
+      name: "Kerr Smith",
+      history: "Kerr Smith is an american actor known for his roles in popular movies like 'Final Destination' and TV shows such as 'Dawson's Creek' and 'Charmed'. He was born in Exton, Pennsylvania."
     },
     {
       id: 5,
-      name: "Charlie Brown",
-      role: "Data Analyst",
-      email: "charlie.brown@example.com",
-      department: "Analytics"
+      name: "Joseph Parker",
+      history: "Joseph Parker is a historic figure who owned land in Exton during the early to mid 18th century. He was known for his contributions to the local community and preserving key artifacts from that time period."
     }
   ]);
 
@@ -62,19 +52,7 @@ export default function People() {
             >
               <h3 style={{ marginTop: 0, color: "#333" }}>{person.name}</h3>
               <p style={{ margin: "8px 0", color: "#666" }}>
-                <strong>Role:</strong> {person.role}
-              </p>
-              <p style={{ margin: "8px 0", color: "#666" }}>
-                <strong>Department:</strong> {person.department}
-              </p>
-              <p style={{ margin: "8px 0", color: "#666" }}>
-                <strong>Email:</strong>{" "}
-                <a
-                  href={`mailto:${person.email}`}
-                  style={{ color: "#007bff", textDecoration: "none" }}
-                >
-                  {person.email}
-                </a>
+                <strong>History:</strong> {person.history}
               </p>
             </div>
           ))}
