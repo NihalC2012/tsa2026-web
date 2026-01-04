@@ -6,46 +6,38 @@ import "leaflet/dist/leaflet.css";
 const locations = [
   {
     id: 1,
-    name: "Main Office",
-    coordinates: [40.0326, -75.6275],
-    address: "304 Main Street",
+    name: "Exton Mall",
+    coordinates: [40.0314, -75.6236],
+    address: "260 Exton Square",
     city: "Exton",
     state: "PA, US",
-    postalCode: "M5B 2K3",
-    phone: "1-2729795000 Ext. 5192",
     color: "blue"
   },
   {
     id: 2,
-    name: "Branch Office",
-    coordinates: [40.0586, -75.6015],
-    address: "150 Market Street",
+    name: "American Helicopter Museum",
+    coordinates: [39.991863, -75.578867],
+    address: "1220 American Blvd",
     city: "West Chester",
     state: "PA, US",
-    postalCode: "19380",
-    phone: "1-6105551234",
     color: "red"
   },
   {
     id: 3,
-    name: "Warehouse",
-    coordinates: [40.0000, -75.6500],
-    address: "500 Industrial Blvd",
-    city: "Downingtown",
+    name: "Exton Park",
+    coordinates: [40.0380, -75.6124],
+    address: "611 Swedesford Road",
+    city: "Exton",
     state: "PA, US",
-    postalCode: "19335",
-    phone: "1-6105555678",
     color: "green"
   },
   {
     id: 4,
-    name: "Retail Store",
-    coordinates: [40.0450, -75.5800],
-    address: "789 Commerce Drive",
-    city: "Malvern",
+    name: "Church Farm School",
+    coordinates: [40.0328, -75.5951],
+    address: "1001 Lincoln Hwy",
+    city: "Exton",
     state: "PA, US",
-    postalCode: "19355",
-    phone: "1-6105559012",
     color: "orange"
   }
 ];
@@ -109,8 +101,6 @@ export default function Maps() {
             <p style="margin: 5px 0;"><strong>Address:</strong> ${location.address}</p>
             <p style="margin: 5px 0;"><strong>City:</strong> ${location.city}</p>
             <p style="margin: 5px 0;"><strong>State:</strong> ${location.state}</p>
-            <p style="margin: 5px 0;"><strong>Postal Code:</strong> ${location.postalCode}</p>
-            <p style="margin: 5px 0;"><strong>Phone:</strong> ${location.phone}</p>
           </div>
         `);
 
@@ -148,10 +138,10 @@ export default function Maps() {
 
   return (
     <div className="maps-page" style={{ padding: "20px", backgroundColor: "#f5f5f5", minHeight: "100vh" }}>
-      <h1 style={{ marginBottom: "20px", color: "#333" }}>Maps</h1>
+      <h1 style={{ marginBottom: "20px", color: "#333" }}>Map</h1>
       <div style={{ padding: "20px", backgroundColor: "white", borderRadius: "8px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
         <p style={{ marginBottom: "20px", color: "#666", fontSize: "16px" }}>
-          Explore locations on the interactive map below.
+          Explore Exton and its famous landmarks using the interactive map below. Each marker represents a key location in the area. Click on the markers to see more details about each location.
         </p>
         <div
           ref={mapRef}
@@ -179,7 +169,6 @@ export default function Maps() {
                 <p style={{ margin: "4px 0", fontSize: "14px", color: "#666" }}>
                   <strong>Address:</strong> {location.address}<br />
                   <strong>City:</strong> {location.city}, {location.state}<br />
-                  <strong>Phone:</strong> {location.phone}
                 </p>
               </div>
             ))}
