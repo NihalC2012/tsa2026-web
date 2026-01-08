@@ -1,3 +1,6 @@
+How to run website
+
+
 1. Install Git and Node.js
 
 Make sure you have both installed:
@@ -39,3 +42,4 @@ http://localhost:3000
 
 
 You can open this in your browser to see the site running.
+
