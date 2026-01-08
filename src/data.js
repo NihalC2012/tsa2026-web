@@ -1,197 +1,140 @@
-// src/data.js
-export const siteData = {
-  featured: [
-    {
-      title: "The Best of Exton in 2026",
-      subtitle: "Things to Do • Attractions & Tours",
-      image: "/assets/cards/best-of-2026.jpg",
-      tags: ["Things to Do", "Attractions & Tours"],
-      href: "/itineraries",
-    },
-    {
-      title: "Learn Something New in Exton",
-      subtitle: "Things to Do • Attractions & Tours",
-      image: "/assets/cards/learn-new.jpg",
-      tags: ["Things to Do", "Attractions & Tours"],
-      href: "/itineraries",
-    },
-    {
-      title: "Trails + Town in One Day",
-      subtitle: "Things to Do • Outdoors & Wellness",
-      image: "/assets/cards/outdoor-daytrip.jpg",
-      tags: ["Things to Do", "Outdoors & Wellness"],
-      href: "/itineraries",
-    },
-    {
-      title: "A Taste of Local Cuisine",
-      subtitle: "Eat & Drink • Restaurants",
-      image: "/assets/cards/local-cuisine.jpg",
-      tags: ["Eat & Drink", "Restaurants"],
-      href: "/itineraries",
-    },
-  ],
+const items = [
+  {
+    title: "1918",
+    contentTitle: "Church Farm School",
+    contentText:
+      "The first formal high school in Exton",
+    contentDetailedText: `Charles Wesley Shreiner established the first formal day and boarding school for boys in Glen Loch (now known as Exton). Mostly boys from single parent households in the rural areas of Glen Loch attended the school.`,
+    media: {
+      name: "Dunkirk Evacuation",
+              // For local images in public/images folder, use: "/images/your-image.jpg"
+        // For images in src/images folder, import them and use the imported variable
+        //url: "https://picsum.photos/800/600?random=1"
+        // Example local image: url: "/images/dunkirk.jpg"
 
-  events: [
-    {
-      id: "e1",
-      title: "Exton Winter Market",
-      date: "Jan 10, 2026",
-      time: "10:00AM - 2:00PM",
-      image: "/assets/events/winter-market.jpg",
-      categories: ["Things to Do", "Family"],
-      location: "Exton Square area",
-    },
-    {
-      id: "e2",
-      title: "Live Music Night (Local Bands)",
-      date: "Jan 14, 2026",
-      time: "7:00PM - 10:00PM",
-      image: "/assets/events/live-music.jpg",
-      categories: ["Arts & Culture", "Eat & Drink"],
-      location: "Main Street Exton",
-    },
-    {
-      id: "e3",
-      title: "Chester Valley Trail Community Ride",
-      date: "Jan 17, 2026",
-      time: "9:00AM - 12:00PM",
-      image: "/assets/events/trail-ride.jpg",
-      categories: ["Sports & Events", "Outdoors & Wellness"],
-      location: "Trailhead meet-up",
-    },
-    {
-      id: "e4",
-      title: "Family Fun Day: Science + Crafts",
-      date: "Jan 18, 2026",
-      time: "11:00AM - 3:00PM",
-      image: "/assets/events/family-fun.jpg",
-      categories: ["Family", "Things to Do"],
-      location: "Library / community center",
-    },
-  ],
+      source: {
+        url: "/images/ChurchFarmschool.jpg"
+      },
+      type: "IMAGE"
+    }
+  },
+  {
+    title: "1920s-1930s",
+    contentTitle: "Small Crossroad Community",
+    contentText: `Glen Loch remained mostly rural and agricultural through the 1920s and 1930s.`,
+    contentDetailedText: `Glen Loch remained a small community of farmers with limited growth besides basic services. Lincoln Highway (now Route 30) was the main road through the area, with a few small businesses and farms along the road. The area was still quite rural, with open fields and farmland dominating the landscape.`,
+   media: {
+      name: "Battle of Britain",
+      source: {
+        url: "/images/Route30.jpg"
+      },
+      type: "IMAGE"
+    }
+  },
+  {
+    title: "1950s",
+    contentTitle: "Post-War Suburban Growth",
+    contentText: `Exton transitions from rural lands to suburban development`,
+    contentDetailedText: `After World War II, the area began to see more suburban development as people moved out of Philadelphia and into the surrounding countryside. Improved infrastructure made commuting easier attracted residents and small businessesto the area.`,
+    media: {
+      name: "Operation Barbarossa",
+      source: {
+        url: "/images/1950sExton.jpg"
+      },
+      type: "IMAGE"
+    }
+  },
+  {
+    title: "1962",
+    contentTitle: "Exton is the center of attention",
+    contentText: `Exton is designated as the center of the WestWhiteland Township`,
+    contentDetailedText: `The West Whiteland Township was established Exton as its administrative center. They also developed their first comprehensive plan with major ideas that shaped future development. These ideas include large retail centers, housing developments, and other amenities for the growing population.`,
+    media: {
+      name: "Pearl Harbor",
+      source: {
+        url: "/images/1962.jpg"
+      },
+      type: "IMAGE"
+    }
+  },
+  {
+    title: "March 15, 1973",
+    contentTitle: "The Exton Mall Opens",
+    contentText: `A redefining step for Exton as a regional hub`,
+    contentDetailedText: `The opening of the Exton Mall was a significant milestone for the West Whiteland Township and the greater Exton Area. It was developed by the Rouse Company, opened with over 100 stores. It was Chester County's first enclosed mall and quickly grew in popularity. It acted as a social hub for teens after school. During the morning seniors used the mall as a place to walk and socialize indoors. The mall attracted many families in need of jobs and provided a steady source of income for many families in the area.`,
+    media: {
+      name: "Fall of Singapore",
+      source: {
+        url: "/images/ExtonMall.jpg"
+      },
+      type: "IMAGE"
+    }
+  },
+  {
+    title: "1995",
+    contentTitle: "Route 30 Bypass Completed",
+    contentText: `The Route 30 Bypass is completed, diverting traffic around Exton`,
+    contentDetailedText: `After 30 years of heated debate and planning, the Route 30 Bypass was finally completed in 1995. The bypass diverted traffic away from the center of Exton, reducing congestion and improving safety. This allowed for further development in the area, as businesses and residents were more attracted to the improved infrastructure.`,
+    media: {
+      name: "Battle of Midway",
+      source: {
+        url: "/images/Bypass.jpg"
+      },
+      type: "IMAGE"
+    }
+  },
+  {
+    title: "1990s-2000s",
+    contentTitle: "Saving Green Space",
+    contentText: `The opening of Exton Park`,
+    contentDetailedText: `After fundraising and lobbying by local residents and environmental groups, the Exton park was opened in the late 1990s. Land previously tied to the Church Farm School was converted into a public park, providing much-needed green space for the growing community. The park features walking trails, sports fields, and picnic areas, and has become a popular destination for families and outdoor enthusiasts in the area.`,
+    media: {
+      name: "Battle of Alamein",
+      source: {
+        url: "/images/ExtonPark.jpg"
+      },
+      type: "IMAGE"
+    }
+  },
+  {
+    title: "2000s",
+    contentTitle: "A new Main Street",
+    contentText: `Main Street at Exton opens to revitalize downtown Exton`,
+    contentDetailedText: `Main Street at Exton is opened in the early 2000s to feel more walkable and community-oriented. The development includes a mix of retail, dining, and residential spaces, designed to create a vibrant downtown area. `,
+    media: {
+      name: "Battle of Stalingrad",
+      source: {
+        url: "/images/MainStreet.jpg"
+      },
+      type: "IMAGE"
+    }
+  },
+  {
+    title: "2010s-2020s",
+    contentTitle: "Exton Mall Renovation ",
+    contentText: `The mall undergoes major renovations to modernize and attract new tenants`,
+    contentDetailedText: `Traditional retail faces challenges from online shopping, the Exton Mall undergoes major changes to attract new customers. Renovations include updating old stores like JCpenny and Sears are closed for new additions like a movie theater, dining options, and entertainment venues. The mall also hosts community events and activities to draw in visitors.`,
+    media: {
+      name: "D-Day Operation Overlord",
+      source: {
+        url: "/images/ExtonMallRenovation.jpeg"
+      },
+      type: "IMAGE"
+    }
+  },
+  {
+    title: "2025",
+    contentTitle: "Present Day Exton",
+    contentText: `Exton continues to develop as a vibrant community. `,
+    contentDetailedText: `The Exton area is a thriving community with many new features to look forward to in the future. New housing complexes and major renovations in the Exton Mall are exciting events to look forward to. There are also retail stores being added to draw in more attention and business to the area. With its rich history and strong community spirit, Exton is poised for a bright future.`,
+    media: {
+      name: "Application Build",
+      source: {
+        url: "/images/Exton2025.jpg"
+      },
+      type: "IMAGE"
+    }
+  }
+];
 
-  itineraries: [
-    {
-      id: "i1",
-      title: "3 Days of Historic Exton",
-      image: "/assets/itineraries/historic.jpg",
-      description: "History-rich stops, nearby heritage sites, and small-town charm with easy drives.",
-    },
-    {
-      id: "i2",
-      title: "3 Days of Arts and Culture",
-      image: "/assets/itineraries/arts.jpg",
-      description: "Galleries, live music, local makers, and cultural experiences across Chester County.",
-    },
-    {
-      id: "i3",
-      title: "3 Days of Dining in Exton",
-      image: "/assets/itineraries/dining.jpg",
-      description: "Neighborhood favorites, coffee spots, dessert stops, and date-night picks.",
-    },
-    {
-      id: "i4",
-      title: "3 Days of Outdoor Adventures",
-      image: "/assets/itineraries/outdoors.jpg",
-      description: "Trails, parks, biking routes, and scenic drives that feel like a reset.",
-    },
-    {
-      id: "i5",
-      title: "3 Days of Family Fun",
-      image: "/assets/itineraries/family.jpg",
-      description: "Kid-friendly attractions, hands-on activities, and easy wins for all ages.",
-    },
-    {
-      id: "i6",
-      title: "3 Days of Local Shopping",
-      image: "/assets/itineraries/shopping.jpg",
-      description: "Boutiques, outlets, and local finds with breaks for coffee and snacks.",
-    },
-  ],
-
-  featuredArticles: [
-    {
-      id: "a1",
-      title: "Exton’s Best Rooftop Spots",
-      author: "Discover Exton",
-      image: "/assets/articles/rooftop.jpg",
-      categories: ["Eat & Drink", "Bars"],
-    },
-    {
-      id: "a2",
-      title: "What’s Next in Exton: Milestone Moments",
-      author: "Discover Exton",
-      image: "/assets/articles/milestones.jpg",
-      categories: ["LA Guides", "Community"],
-    },
-    {
-      id: "a3",
-      title: "Exton’s Best Hiking Trails",
-      author: "Discover Exton",
-      image: "/assets/articles/hiking.jpg",
-      categories: ["Outdoors & Wellness", "Things to Do"],
-    },
-    {
-      id: "a4",
-      title: "Exton’s Best Parks",
-      author: "Discover Exton",
-      image: "/assets/articles/parks.jpg",
-      categories: ["Outdoors & Wellness", "Things to Do"],
-    },
-  ],
-
-  streets: [
-    {
-      id: "s1",
-      name: "Local Coffee Roaster",
-      tagline: "Small batch • Big flavor",
-      thumb: "/assets/streets/coffee.jpg",
-      video: "https://www.youtube-nocookie.com/embed/ScMzIvxBSi4",
-    },
-    {
-      id: "s2",
-      name: "Chef + Kitchen Story",
-      tagline: "Neighborhood comfort food",
-      thumb: "/assets/streets/chef.jpg",
-      video: "https://www.youtube-nocookie.com/embed/ScMzIvxBSi4",
-    },
-    {
-      id: "s3",
-      name: "Trail Guide",
-      tagline: "Best loops + views",
-      thumb: "/assets/streets/trails.jpg",
-      video: "https://www.youtube-nocookie.com/embed/ScMzIvxBSi4",
-    },
-  ],
-
-  neighborhoods: [
-    {
-      name: "Exton",
-      description:
-        "The hub: shops, dining, parks, and quick access to trails and day trips.",
-      chips: ["Dining", "Shopping", "Family"],
-      coordinates: { lat: 40.029, lng: -75.627 },
-    },
-    {
-      name: "West Whiteland",
-      description:
-        "Convenient retail, restaurants, and easy routes to surrounding towns.",
-      chips: ["Convenience", "Food", "Events"],
-      coordinates: { lat: 40.039, lng: -75.665 },
-    },
-    {
-      name: "East Whiteland",
-      description:
-        "Parks, trails, and a calm suburban feel with great access to the region.",
-      chips: ["Outdoors", "Parks", "Wellness"],
-      coordinates: { lat: 40.047, lng: -75.571 },
-    },
-    {
-      name: "Downingtown",
-      description:
-        "Walkable main-street energy, local eats, and community happenings nearby.",
-      chips: ["Main Street", "Dining", "Culture"],
-      coordinates: { lat: 40.007, lng: -75.705 },
-    },
-  ],
-};
+export default items;
