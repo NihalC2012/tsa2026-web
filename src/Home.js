@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { siteData } from "./data";
 
 export default function Home() {
-  const navigate = useNavigate();
+  const history = useHistory();
   const [menuOpen, setMenuOpen] = useState(false);
   const [cookieOpen, setCookieOpen] = useState(false);
   const [activeTown, setActiveTown] = useState(null);
@@ -86,7 +86,7 @@ export default function Home() {
             <a href="#food">Eat & Drink</a>
           </nav>
 
-          <button className="icon-btn" aria-label="Search" onClick={() => navigate("/search")}>
+          <button className="icon-btn" aria-label="Search" onClick={() => history.push("/search")}>
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path
                 d="M10 18a8 8 0 1 1 5.3-14 8 8 0 0 1-5.3 14Zm11 3-6.2-6.2"
