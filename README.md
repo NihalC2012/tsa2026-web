@@ -1,4 +1,18 @@
-How to run website
+# What to do when editing code
+
+1. Go to https://github.com/NihalC2012/tsa2026-web
+2. Find this thing and click it
+<img width="1060" height="600" alt="image" src="https://github.com/user-attachments/assets/3b972317-c8c5-4bd1-b947-6d4467ad2e7d" />
+
+3. Put the branch name as your name and click "Create branch ____ from main"
+4. Edit code there
+
+This is done so if you acidentally mess up the website you dont mess up the main code for the website that alrady works.
+
+
+
+
+# How to run website
 
 
 1. Install Git and Node.js
@@ -42,4 +56,5 @@ http://localhost:3000
 
 
 You can open this in your browser to see the site running.
+
 
