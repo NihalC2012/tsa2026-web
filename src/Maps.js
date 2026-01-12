@@ -47,6 +47,29 @@ export default function Maps() {
   const mapInstanceRef = useRef(null);
   const markersRef = useRef([]);
 
+  // Function to handle location card click
+  const handleLocationClick = (location) => {
+    const map = mapInstanceRef.current;
+    if (!map) return;
+
+    // Find the marker for this location
+    const markerIndex = location.id - 1; // Arrays are 0-indexed
+    const marker = markersRef.current[markerIndex];
+
+    if (marker) {
+      // Zoom and pan to the location
+      map.setView(location.coordinates, 15, {
+        animate: true,
+        duration: 1
+      });
+
+      // Open the popup for this marker
+      setTimeout(() => {
+        marker.openPopup();
+      }, 500); // Delay to allow pan animation to complete
+    }
+  };
+
   useEffect(() => {
     // Fix for default marker icon issue in webpack
     delete leaflet.Icon.Default.prototype._getIconUrl;
@@ -137,45 +160,76 @@ export default function Maps() {
   }, []);
 
   return (
-    <div className="maps-page" style={{ padding: "20px", backgroundColor: "#f5f5f5", minHeight: "100vh" }}>
-      <h1 style={{ marginBottom: "20px", color: "#333" }}>Map</h1>
-      <div style={{ padding: "20px", backgroundColor: "white", borderRadius: "8px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
-        <p style={{ marginBottom: "20px", color: "#666", fontSize: "16px" }}>
-          Explore Exton and its famous landmarks using the interactive map below. Each marker represents a key location in the area. Click on the markers to see more details about each location.
-        </p>
-        <div
-          ref={mapRef}
-          id="map"
-          style={{
-            width: "100%",
-            height: "600px",
-            border: "2px solid #ddd",
-            borderRadius: "8px",
-            boxShadow: "0 2px 4px rgba(0,0,0,0.1)"
-          }}
-        />
-        <div style={{ marginTop: "20px", padding: "15px", backgroundColor: "#f9f9f9", borderRadius: "5px" }}>
-          <h3 style={{ marginTop: 0, color: "#333" }}>Locations ({locations.length})</h3>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "15px", marginTop: "15px" }}>
-            {locations.map((location) => (
-              <div key={location.id} style={{ 
-                padding: "12px", 
-                backgroundColor: "white", 
-                borderRadius: "5px",
-                border: `2px solid ${location.color === 'blue' ? '#007bff' : location.color === 'red' ? '#dc3545' : location.color === 'green' ? '#28a745' : '#ffc107'}`,
-                boxShadow: "0 1px 3px rgba(0,0,0,0.1)"
-              }}>
-                <h4 style={{ margin: "0 0 8px 0", color: "#333" }}>{location.name}</h4>
-                <p style={{ margin: "4px 0", fontSize: "14px", color: "#666" }}>
-                  <strong>Address:</strong> {location.address}<br />
-                  <strong>City:</strong> {location.city}, {location.state}<br />
-                </p>
-              </div>
-            ))}
+    <div className="maps-page">
+      <div className="page-container">
+        <div style={{ textAlign: "center", marginBottom: "var(--space-2xl)" }}>
+          <h1>Explore Exton</h1>
+          <p style={{
+            fontSize: "var(--font-size-lg)",
+            color: "var(--color-text-secondary)",
+            maxWidth: "800px",
+            margin: "var(--space-md) auto 0"
+          }}>
+            Discover famous landmarks and key locations in the Exton area through our interactive map
+          </p>
+        </div>
+
+        <div className="section">
+          <div
+            ref={mapRef}
+            id="map"
+            style={{
+              width: "100%",
+              height: "600px",
+              borderRadius: "var(--border-radius-lg)",
+              boxShadow: "var(--shadow-md)",
+              marginBottom: "var(--space-xl)"
+            }}
+          />
+
+          <div className="section-light">
+            <h3 style={{ marginBottom: "var(--space-lg)" }}>
+              Featured Locations ({locations.length})
+            </h3>
+            <div className="grid-4">
+              {locations.map((location) => (
+                <div
+                  key={location.id}
+                  className="card"
+                  onClick={() => handleLocationClick(location)}
+                  style={{
+                    borderTop: `4px solid ${
+                      location.color === 'blue' ? 'var(--color-primary)' :
+                      location.color === 'red' ? 'var(--color-error)' :
+                      location.color === 'green' ? 'var(--color-success)' :
+                      'var(--color-warning)'
+                    }`,
+                    cursor: 'pointer'
+                  }}
+                >
+                  <h4 className="card-title">{location.name}</h4>
+                  <p className="card-text" style={{ fontSize: "var(--font-size-sm)" }}>
+                    <strong>Address:</strong> {location.address}<br />
+                    <strong>City:</strong> {location.city}, {location.state}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div style={{ marginTop: "20px", paddingTop: "15px", borderTop: "1px solid #ddd" }}>
-            <h4 style={{ marginTop: 0, color: "#333" }}>Map Controls</h4>
-            <ul style={{ margin: "10px 0", paddingLeft: "20px", color: "#666" }}>
+
+          <div style={{
+            marginTop: "var(--space-xl)",
+            padding: "var(--space-xl)",
+            backgroundColor: "var(--color-background-subtle)",
+            borderRadius: "var(--border-radius-lg)"
+          }}>
+            <h4 style={{ marginBottom: "var(--space-md)" }}>Map Controls</h4>
+            <ul style={{
+              margin: 0,
+              paddingLeft: "var(--space-xl)",
+              color: "var(--color-text-secondary)",
+              lineHeight: "var(--line-height-relaxed)"
+            }}>
               <li>Click and drag to pan around the map</li>
               <li>Use the +/- buttons or scroll to zoom in and out</li>
               <li>Click on any marker to see location details</li>

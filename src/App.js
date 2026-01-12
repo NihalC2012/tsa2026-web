@@ -11,60 +11,30 @@ export default function App() {
   return (
     <Router>
       <div className="App">
-        <nav style={{
-          backgroundColor: "#333",
-          padding: "15px",
-          marginBottom: "20px"
-        }}>
-          <ul style={{
-            listStyle: "none",
-            margin: 0,
-            padding: 0,
-            display: "flex",
-            gap: "20px"
-          }}>
+        <nav className="nav-container">
+          <ul className="nav-list">
             <li>
-              <Link to="/" style={{
-                color: "white",
-                textDecoration: "none",
-                fontSize: "18px"
-              }}>
+              <Link to="/" className="nav-link">
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/maps" style={{
-                color: "white",
-                textDecoration: "none",
-                fontSize: "18px"
-              }}>
+              <Link to="/maps" className="nav-link">
                 Maps
               </Link>
             </li>
             <li>
-              <Link to="/search" style={{
-                color: "white",
-                textDecoration: "none",
-                fontSize: "18px"
-              }}>
+              <Link to="/search" className="nav-link">
                 Search
               </Link>
             </li>
             <li>
-              <Link to="/people" style={{
-                color: "white",
-                textDecoration: "none",
-                fontSize: "18px"
-              }}>
+              <Link to="/people" className="nav-link">
                 People
               </Link>
             </li>
             <li>
-              <Link to="/timeline" style={{
-                color: "white",
-                textDecoration: "none",
-                fontSize: "18px"
-              }}>
+              <Link to="/timeline" className="nav-link">
                 Timeline
               </Link>
             </li>
